@@ -127,34 +127,6 @@ class InteractiveObject{
     }
 }
 
-class TextBox {
-    constructor(x, y, width, fillColour, txtColour) {
-        this.x = x;
-        this.y = y;
-        this.w = width;
-        // fixed height
-        this.h = 50;
-        this.txt = "Placeholder";
-        console.log(this.txt);
-        this.fillColour = fillColour;
-        this.txtColour = txtColour;
-    }
-
-    update(txt = "Placeholder") {
-        this.txt = txt;
-        this.draw();
-    }
-
-    draw(){
-        this.basicRect(this.x,this.y, this.w, this.h,this.fillColour)
-        this.centredText(this.txt,this.x+this.w/2,this.y+this.h/2,this.txtColour)
-    }
-
-}
-
-TextBox.prototype.centredText = centredText;
-TextBox.prototype.basicRect = basicRect;
-
 class Rectangle{
     constructor(x,y,w,h,fill){
         this.x = x;
@@ -177,15 +149,6 @@ class Rectangle{
 
 }
 
-Rectangle.prototype.basicRect = basicRect;
-
-function basicRect(x,y,w,h,colour){
-    ctx.beginPath();
-    ctx.rect(x,y,w,h);
-    ctx.fillStyle = colour;
-    ctx.fill();
-}
-
 function strokeRect(x,y,w,h,colour = "rgb(255,255,255,200",
                     l=1){
     ctx.beginPath();
@@ -193,15 +156,6 @@ function strokeRect(x,y,w,h,colour = "rgb(255,255,255,200",
     ctx.lineWidth = l;
     ctx.strokeStyle = colour;
     ctx.stroke();
-}
-
-function centredText(txt,x_c,y_c, colour){
-    ctx.font = "20 px monospace"
-    ctx.textBaseline = 'middle';
-    ctx.textAlign = 'center';
-
-    ctx.fillStyle = this.txtColour;
-    ctx.fillText(txt, x_c, y_c);
 }
 
 
