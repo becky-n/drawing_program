@@ -107,6 +107,7 @@ class InteractiveObject{
         let output = "This mouse went down at x = " + e.offsetX + "and y = " + e.offsetY;
         console.log (output)
     }
+
     mUp(e){
         this.mouseIsDown = false;
         let output = "This mouse went up at x = " + e.offsetX + "and y = " + e.offsetY;
