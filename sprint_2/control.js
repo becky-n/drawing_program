@@ -5,17 +5,19 @@ class ControlObject extends InteractiveObject{
         super();
         this.w = 0;
         this.h = 0;
+
         this.objectSet = [];
     }
 
     mUp(e){
         super.mUp(e);
         let name = InteractiveButton.selected.text;
+
         if (name === "Rectangle"){
             let temp_2 = new Rectangle(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][5]);
             this.objectSet.push(temp_2);
         }
-       else if(name === "Ellipse"){
+        else if(name === "Ellipse"){
             let temp = new Ellipse(this.xMouseStart +this.w/2, this.yMouseStart + this.h/2, Math.abs(this.w/2),Math.abs(this.h/2), colArray[0][5]);
             this.objectSet.push(temp);
         }
@@ -34,6 +36,12 @@ class ControlObject extends InteractiveObject{
             console.log("mouse is down");
             this.draw();
         }
+
+        for(let i =0; i<colArray.length; i++){
+            for(let j=0 ; j<colArray[i].length; j++){
+               let test= new Rectangle(100+j*50,30 +i *50,50, 50,colArray[i][j], true);
+            }
+        }
     }
 
     draw(){
@@ -45,6 +53,8 @@ class ControlObject extends InteractiveObject{
             this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
             this.basicEllipse(this.xMouseStart +this.w/2, this.yMouseStart + this.h/2, Math.abs(this.w/2),Math.abs(this.h/2), colArray[0][2]);
         }
+
+
     }
 
 }

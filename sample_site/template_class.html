@@ -87,9 +87,59 @@
 				</ol>
 
 				<h3>Github Push</h3>
-				<img class = "img-responsive" src="assets/img/sprint_1_git.png">
+				<img class = "img-responsive" src="assets/img/sprint_1_git.png" alt ="">
 <hr>
 <h1>Sprint Two</h1>
+				<p> The purpose of this sprint was to create buttons that relate to ellipse and rectangle functions.</p>
+				<img class="img-responsive"  src="assets/img/sprint_2_kb.png" alt="">
+				<img class="img-responsive"  src="assets/img/sprint_2_plan1.png" alt="">
+				<img class="img-responsive"  src="assets/img/sprint_2_plan2.png" alt="">
+<h3>Sprint Review</h3>
+				<p>In this sprint I made an ellipse function where the user can drag and drop an ellipse that fills in with
+				a colour and I also made buttons which control the shape functions. I am happy with how the ellipse function
+				works and I also changed the design of the rectangle function so it looks cleaner (no lines or circle in
+				the middle). My buttons work sufficiently as expected but I want to change the placement and aesthetic design of them.</p>
+
+				<h4>Testing</h4>
+				<ol>
+					<li><video class="center" controls>
+						<source src="assets/vids/s2_test2.mp4" type="video/mp4">
+					</video>
+				<p>	For my first design of the ellipse function, my drawing stroke guide didn't match up with the filled
+					ellipse that was created. The stroke guide was dragged but the filled ellipse appeared at a different position
+					and a smaller size. I managed to fix this, however, as I found out that I was setting the measurements
+					for the ellipse twice, so in my init file with the ellipse object and when I called the ellipse object.
+				</p></li>
+
+					<li><video class="center" controls>
+						<source src="assets/vids/s2_test1.mp4" type="video/mp4">
+
+					</video>
+						<p>
+							In this test video I was trying to test one of my methods for the buttons that correspond to a shape.
+							I was trying to use true and false to set when the drawing guide for each shape would be drawn. However,
+							this did not work as the previous drawing guide would appear for the first shape of the new shape clicked, instead
+							of the shape clicked's drawing guide. To fix this issue, I found out that my interactive button selected
+							was set to null, so I changed it to "placeholder" and then was able to set if statements to make the correct
+							drawing guides when the shapes are clicked.
+						</p>
+					</li>
+
+					<li>
+						<video class="center" controls>
+							<source src="assets/vids/sprint_2.mp4" type="video/mp4">
+						</video>
+
+						<p>This is my final test video for sprint 2. All my buttons and shape functions worked as expected but I still
+						have the errors of going outside of the canvas and trying to make a shape, and the issue where moving the mouse
+						and tapping the touchpad would create a random shape. I will fix these in my next sprint as I plan on creating
+						an area where you can only draw in (buttons in a separate area) and this should resolve the boundary errors.</p>
+					</li>
+				</ol>
+
+
+
+
 
 <hr>
 <h1>Sprint Three</h1>
