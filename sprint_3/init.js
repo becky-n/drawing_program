@@ -18,6 +18,14 @@ let colArray= [
     ]
 ]
 
+/**
+ * Grid
+ * @param {number} w width of grid
+ * @param {number} h height of grid
+ * @param {number} intervalWidth interval width
+ * @param {string} strokeColour colour of grid
+ * @param {number} strokeWidth width of grid lines
+ */
 
 class Grid{
     constructor(w,h,intervalWidth,strokeColour,
@@ -32,6 +40,7 @@ class Grid{
         this.draw()
     }
     draw(){
+        // loops to draw grid lines
         for(let i = -this.w; i <= this.w; i+=
             this.intervalWidth){
             this.drawLine(i, -this.h, i,
@@ -46,6 +55,7 @@ class Grid{
         }
     }
 
+    // function for drawing the grid lines
     drawLine(x_1,y_1,x_2,y_2,strokeColour,strokeWidth){
         ctx.beginPath();
         ctx.moveTo(x_1,y_1);
@@ -87,33 +97,47 @@ my_c.style.display = "block";
 my_c.style.margin = "auto";
 document.body.style.backgroundColor = "rgba(153, 153, 153,1)";
 
+/**
+ * Interactive object
+ * @param {number} xMouseStart sets position of x mouse start
+ * @param {number} yMouseStart sets position of y mouse start
+ * @param {number} xMouse sets position of x mouse
+ * @param {number} yMouse sets position of y mouse
+ * @param {boolean} mouseIsDown sets mouse down
+ */
+
 class InteractiveObject{
     constructor(){
-        canvas.addEventListener('mousedown', this.mDown.bind(this));
-        canvas.addEventListener('mouseup', this.mUp.bind(this));
-        canvas.addEventListener('mousemove', this.mMove.bind(this));
-        canvas.addEventListener('mouseleave', this.mLeave.bind(this));
-        canvas.addEventListener('click', this.mClick.bind(this));
+        this.element = canvas
+        // tracks movement of mouse
+        this.element.addEventListener('mousedown', this.mDown.bind(this));
+        this.element.addEventListener('mouseup', this.mUp.bind(this));
+        this.element.addEventListener('mousemove', this.mMove.bind(this));
+        this.element.addEventListener('mouseleave', this.mLeave.bind(this));
+        this.element.addEventListener('click', this.mClick.bind(this));
         this.xMouseStart = 0;
         this.yMouseStart = 0;
         this.xMouse = 0;
         this.yMouse = 0;
-        this.mouseIsDown = false;
+
+
     }
     mDown(e){
-        this.xMouseStart = e.offsetX;
-        this.yMouseStart = e.offsetY;
-        this.mouseIsDown = true;
-        let output = "This mouse went down at x = " + e.offsetX + "and y = " + e.offsetY;
-        console.log (output)
+        // console logs the position of the mouse
+       let output = "This mouse went down at x = " + e.offsetX + "and y = " + e.offsetY;
+       console.log (output)
     }
+
+
+
     mUp(e){
-        this.mouseIsDown = false;
-        let output = "This mouse went up at x = " + e.offsetX + "and y = " + e.offsetY;
-        console.log(output)
+      //  console logs position of mouse if mouse is up
+       let output = "This mouse went up at x = " + e.offsetX + "and y = " + e.offsetY;
+       console.log(output)
     }
 
     mMove(e){
+        // returns offset coordinates for x and y
         this.xMouse = e.offsetX;
         this.yMouse = e.offsetY;
         //console.log("moving")
@@ -127,6 +151,16 @@ class InteractiveObject{
     }
 }
 
+/**
+ * Rectangle
+ * @param {number} x x position
+ * @param {number} y y position
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fills shape
+ */
+
+
 class Rectangle{
     constructor(x,y,w,h,fill){
         this.x = x;
@@ -137,10 +171,12 @@ class Rectangle{
     }
 
     update(){
+        // updates draw function
         this.draw();
     }
 
     draw(){
+        // draws rectangle
         ctx.fillStyle = this.fill;
         ctx.beginPath();
         ctx.rect(this.x, this.y, this.w, this.h);
@@ -148,6 +184,15 @@ class Rectangle{
     }
 
 }
+
+/**
+ * Ellipse
+ * @param {number} x x position
+ * @param {number} y y position
+ * @param {number} xR vertical radius
+ * @param {number} yR horizontal radius
+ * @param {string} fill fills shape
+ */
 
 class Ellipse{
     constructor(x,y,w,h,fill) {
@@ -159,6 +204,7 @@ class Ellipse{
     }
 
     draw(){
+        // draws ellipse
         ctx.beginPath();
         ctx.ellipse(this.x,this.y, this.xR, this.yR, 0, 0,2*Math.PI);
         ctx.fillStyle = this.fill;
@@ -171,8 +217,10 @@ class Ellipse{
 
 }
 
+
 function strokeRect(x,y,w,h,colour = "rgb(255,255,255,200",
                     l=1){
+    // draws stroke rectangle
     ctx.beginPath();
     ctx.rect(x,y,w,h);
     ctx.lineWidth = l;
@@ -182,8 +230,19 @@ function strokeRect(x,y,w,h,colour = "rgb(255,255,255,200",
 
 
 function basicEllipse(x,y,w,h,fill){
+    // draws stroke ellipse
     ctx.beginPath();
     ctx.ellipse(x,y, w, h, 0, 0,2*Math.PI);
     ctx.strokeStyle = fill;
+    ctx.stroke();
+}
+
+function DrawingAreaRect(x,y,w,h,fill, strokeR, lineW){
+    ctx.beginPath();
+    ctx.rect(x,y,w,h);
+    ctx.fillStyle = fill;
+    ctx.fill();
+    ctx.lineWidth = lineW;
+    ctx.strokeStyle = strokeR;
     ctx.stroke();
 }

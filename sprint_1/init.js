@@ -18,6 +18,14 @@ let colArray= [
     ]
 ]
 
+/**
+ * Grid
+ * @param {number} w width of grid
+ * @param {number} h height of grid
+ * @param {number} intervalWidth interval width
+ * @param {string} strokeColour colour of grid
+ * @param {number} strokeWidth width of grid lines
+ */
 
 class Grid{
     constructor(w,h,intervalWidth,strokeColour,
@@ -32,6 +40,7 @@ class Grid{
         this.draw()
     }
     draw(){
+        // loops to draw grid lines
         for(let i = -this.w; i <= this.w; i+=
             this.intervalWidth){
             this.drawLine(i, -this.h, i,
@@ -46,6 +55,7 @@ class Grid{
         }
     }
 
+    // function for drawing the grid lines
     drawLine(x_1,y_1,x_2,y_2,strokeColour,strokeWidth){
         ctx.beginPath();
         ctx.moveTo(x_1,y_1);
@@ -87,8 +97,18 @@ my_c.style.display = "block";
 my_c.style.margin = "auto";
 document.body.style.backgroundColor = "rgba(153, 153, 153,1)";
 
+/**
+ * Interactive object
+ * @param {number} xMouseStart sets position of x mouse start
+ * @param {number} yMouseStart sets position of y mouse start
+ * @param {number} xMouse sets position of x mouse
+ * @param {number} yMouse sets position of y mouse
+ * @param {boolean} mouseIsDown sets mouse down
+ */
+
 class InteractiveObject{
     constructor(){
+        // tracks movement of mouse
         canvas.addEventListener('mousedown', this.mDown.bind(this));
         canvas.addEventListener('mouseup', this.mUp.bind(this));
         canvas.addEventListener('mousemove', this.mMove.bind(this));
@@ -101,20 +121,24 @@ class InteractiveObject{
         this.mouseIsDown = false;
     }
     mDown(e){
+        // returns offset coordinates for x and y
         this.xMouseStart = e.offsetX;
         this.yMouseStart = e.offsetY;
         this.mouseIsDown = true;
+        // console logs the position of the mouse
         let output = "This mouse went down at x = " + e.offsetX + "and y = " + e.offsetY;
         console.log (output)
     }
 
     mUp(e){
         this.mouseIsDown = false;
+        // console logs position of mouse if mouse is up
         let output = "This mouse went up at x = " + e.offsetX + "and y = " + e.offsetY;
         console.log(output)
     }
 
     mMove(e){
+        // returns offset coordinates for x and y
         this.xMouse = e.offsetX;
         this.yMouse = e.offsetY;
         //console.log("moving")
@@ -128,6 +152,15 @@ class InteractiveObject{
     }
 }
 
+/**
+ * Rectangle
+ * @param {number} x sets position of x mouse start
+ * @param {number} y sets position of y mouse start
+ * @param {number} w width
+ * @param {number} h height
+ * @param {string} fill fills shape
+ */
+
 class Rectangle{
     constructor(x,y,w,h,fill){
         this.x = x;
@@ -138,10 +171,12 @@ class Rectangle{
     }
 
     update(){
+        // updates draw function
         this.draw();
     }
 
     draw(){
+        // draws rectangle
         ctx.fillStyle = this.fill;
         ctx.beginPath();
         ctx.rect(this.x, this.y, this.w, this.h);
@@ -152,6 +187,7 @@ class Rectangle{
 
 function strokeRect(x,y,w,h,colour = "rgb(255,255,255,200",
                     l=1){
+    // draws stroke rectangle
     ctx.beginPath();
     ctx.rect(x,y,w,h);
     ctx.lineWidth = l;
@@ -161,6 +197,7 @@ function strokeRect(x,y,w,h,colour = "rgb(255,255,255,200",
 
 
 function drawLine(x_1,y_1,x_2,y_2,strokeColour,strokeWidth=1,ct =ctx){
+    // draws line
     ct.beginPath();
     ct.moveTo(x_1,y_1);
     ct.lineTo(x_2,y_2);
@@ -171,7 +208,7 @@ function drawLine(x_1,y_1,x_2,y_2,strokeColour,strokeWidth=1,ct =ctx){
 }
 
 function drawStrokeCircle(x,y,r, strokeC, strokeW = 1){
-
+    // draws stroke circle
     ctx.beginPath();
     ctx.arc(x,y, r, 0, 2*Math.PI);
     ctx.strokeStyle = strokeC;

@@ -29,6 +29,7 @@ class InteractiveButton extends InteractiveObject {
         this.inBounds = false;
     }
     update(){
+        // if mouse is on button, changes colour
         this.inBounds = this.getBoundary(this.x,this.y, this.w, this.h,
             this.xMouse, this.yMouse)
         let fill = this.fill;
@@ -41,6 +42,7 @@ class InteractiveButton extends InteractiveObject {
             this.textColour)
     }
     mClick(){
+        // registers click on button
         if(this.inBounds){
             InteractiveButton.selected = this;
         }
@@ -50,6 +52,7 @@ class InteractiveButton extends InteractiveObject {
     }
 
     draw(x,y,w,h,c,s, txt, txtCol){
+        // draws button and sets font etc
         ctx.beginPath();
         ctx.rect(x,y,w,h);
         ctx.lineWidth = 2;
@@ -67,6 +70,8 @@ class InteractiveButton extends InteractiveObject {
         ctx.fillText(txt, x + w/2, y + h/2)
     }
 }
+
+// placeholder if button is selected (values fill this)
 InteractiveButton.selected = "Placeholder";
 
 
