@@ -1,16 +1,16 @@
 /**
  * Clickable Button
  * Includes all functions from interactive object
- * @param {number} x ball centre x
- * @param {number} y ball centre y
- * @param {number} w radius of ball
- * @param {number} h radius of ball
+ * @param {number} x centre x
+ * @param {number} y centre y
+ * @param {number} w width
+ * @param {number} h height
  * @param {number} fill fill colour
  * @param {number} over hover over colour
  * @param {number} selected button has been clicked colour
  * @param {number} stroke stroke colour
  * @param {number} text button text
- * @param {number} text button text colour
+ * @param {number} textColour button text colour
  */
 
 class InteractiveButton extends InteractiveObject {

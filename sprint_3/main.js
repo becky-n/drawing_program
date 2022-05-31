@@ -6,6 +6,7 @@ let C = new ControlObject(canvas,350, 50, 400, 500);
 let A_0 = new InteractiveButton(80,100,200,50,"rgb(255,0,0)",colArray[0][1], "rgb(255,0,0)", colArray[0][2], 'Rectangle', colArray[0][2])
 let A_1 = new InteractiveButton(80,150,200,50,"rgb(255,121,0)",colArray[0][1], "rgb(255,121,0)", colArray[0][2], 'Ellipse', colArray[0][2])
 
+
 let buttonSet = [A_0, A_1]
 
 function animate(t){
