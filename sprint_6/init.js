@@ -232,7 +232,7 @@ class Star{
 
     draw(){
         console.log("test")
-        ctx.moveTo(this.x+this.w/2,this.y-this.h/2)
+        //ctx.moveTo(this.x+this.w/2,this.y+this.h/2)
         ctx.beginPath();
         // to draw the lines 5 times for an adjustable pointed star for later
         for (let i=0; i<5; i++){
