@@ -81,12 +81,24 @@ class ControlObject extends InteractiveObject{
                 this.objectSet.push(temp);
             }
             else if (name=== "Star"){
+                // draws star
                 let temp_3 = new Star(this.xMouseStart,this.yMouseStart,this.w,this.h,colourname)
                 this.objectSet.push(temp_3);
             }
             else if(name==="Triangle"){
+                // draws triangle
              let temp_4 = new Triangle(this.xMouseStart,this.yMouseStart,this.w,this.h,colourname)
                 this.objectSet.push(temp_4);
+            }
+            else if (name==="Heart"){
+                // draws heart
+                let temp_5 = new Heart(this.xMouseStart+this.w/2,this.yMouseStart,this.w,this.h,colourname)
+                this.objectSet.push(temp_5);
+            }
+            else if (name ==="Diamond"){
+                // draws diamond
+                let temp_6 = new Diamond(this.xMouseStart,this.yMouseStart,this.w,this.h,colourname)
+                this.objectSet.push(temp_6);
             }
         }
         this.mouseIsDown = false;
@@ -95,7 +107,7 @@ class ControlObject extends InteractiveObject{
 
     update(){
         // drawing space
-        this.DrawingAreaRect(350, 50, 400, 500, colArray[0][0], colArray[0][2],4)
+        this.DrawingAreaRect(425, 25, 450, 600, colArray[0][0], colArray[0][2],4)
 
         // makes it so draggable guide can't leave drawing space
         if(this.xMouse < this.Ax ){
@@ -155,10 +167,24 @@ class ControlObject extends InteractiveObject{
             this.basicEllipse(this.xMouseStart +this.w/2, this.yMouseStart + this.h/2, Math.abs(this.w/2),Math.abs(this.h/2), colArray[0][2]);
         }
         else if(name=== "Star"){
+            // draws stroke rectangle and stroke star
+            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
            this.starStroke(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
         }
         else if(name==="Triangle"){
+            // draws stroke rectangle and stroke triangle
+            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
             this.strokeTriangle(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2], 1.5);
+        }
+        else if (name=== "Heart"){
+            // draws stroke rectangle and stroke heart
+            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
+            this.strokeHeart(this.xMouseStart+this.w/2,this.yMouseStart,this.w,this.h,colArray[0][2],1.5);
+        }
+        else if(name === "Diamond"){
+            // draws stroke rectangle and stroke diamond
+            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
+            this.strokeDiamond(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2], 1.5);
         }
 
     }
@@ -170,4 +196,6 @@ ControlObject.prototype.strokeRect = strokeRect;
 ControlObject.prototype.DrawingAreaRect = DrawingAreaRect ;
 ControlObject.prototype.starStroke = starStroke;
 ControlObject.prototype.strokeTriangle = strokeTriangle;
+ControlObject.prototype.strokeHeart = strokeHeart;
+ControlObject.prototype.strokeDiamond = strokeDiamond;
 
