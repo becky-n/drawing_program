@@ -61,7 +61,7 @@ class InteractiveButton extends InteractiveObject {
         ctx.fill();
         ctx.stroke();
 
-        let myFont = "bold 50 px 'Trebuchet MS', Verdana, sans-serif";
+        let myFont = "bold 500 px 'Trebuchet MS', Verdana, sans-serif";
         ctx.textBaseline = 'middle';
         ctx.textAlign = 'center';
         ctx.font = myFont;

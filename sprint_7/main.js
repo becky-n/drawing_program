@@ -2,28 +2,26 @@ console.log("main.js is called")
 
 // calls objects
 let G = new Grid(width,height, 25, colArray[0][2],0.3);
-let C = new ControlObject(canvas,350, 50, 400, 500);
-let A_0 = new InteractiveButton(80,100,200,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Rectangle', colArray[0][2])
-let A_1 = new InteractiveButton(80,150,200,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Ellipse', colArray[0][2])
-let A_2 = new InteractiveButton(80,50,200,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Star', colArray[0][2])
-let C_1 = new Swatch(80,200,50,50, colArray[0][0], colArray[0][2], colArray[0][0], colArray[0][0])
-let C_2 = new Swatch(130,200,50,50, colArray[0][1],  colArray[0][2], colArray[0][0], colArray[0][0])
-let C_3 = new Swatch(180,200,50,50, colArray[0][2], colArray[0][2], colArray[0][0], colArray[0][0])
-let C_4 = new Swatch(230,200,50,50, colArray[0][3],  colArray[0][2], colArray[0][0], colArray[0][0])
-let C_5 = new Swatch(80,250,50,50, colArray[0][4], colArray[0][2], colArray[0][0], colArray[0][0])
-let C_6 = new Swatch(130,250,50,50, colArray[0][5], colArray[0][2], colArray[0][0], colArray[0][0])
-let C_7 = new Swatch(180,250,50,50,colArray[0][6], colArray[0][2], colArray[0][0], colArray[0][0])
-let C_8 = new Swatch(230,250,50,50, colArray[0][7], colArray[0][2], colArray[0][0],colArray[0][0])
-let C_9 = new Swatch(80,300,50,50, colArray[0][8], colArray[0][2], colArray[0][0], colArray[0][0])
-let C_10 = new Swatch(130,300,50,50, colArray[0][9], colArray[0][2], colArray[0][0], colArray[0][0])
-let C_11 = new Swatch(180,300,50,50, colArray[0][10], colArray[0][2], colArray[0][0], colArray[0][0])
-let C_12 = new Swatch(230,300,50,50, colArray[0][11], colArray[0][2], colArray[0][0], colArray[0][0])
-let U_1 = new InteractiveButton(80,350,200,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Undo', colArray[0][2])
-let U_2 = new InteractiveButton(80,400,200,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Clear', colArray[0][2])
+let C = new ControlObject(canvas,450, 25, 475, 600);
+let A_0 = new InteractiveButton(25,25,200,54,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Rectangle', colArray[0][2])
+let A_1 = new InteractiveButton(25,79,200,54,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Ellipse', colArray[0][2])
+let A_2 = new InteractiveButton(25,133,200,54,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Star', colArray[0][2])
+let A_3 = new InteractiveButton(25,187,200,54,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Triangle', colArray[0][2])
+let A_4 = new InteractiveButton(25,241,200,54,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Heart', colArray[0][2])
+let A_5 = new InteractiveButton(25,295,200,54,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Diamond', colArray[0][2])
+let A_6 = new InteractiveButton(275,25,150,54,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Line', colArray[0][2])
+let U_1 = new InteractiveButton(50,550,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Undo', colArray[0][2])
+let U_2 = new InteractiveButton(250,550,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Clear', colArray[0][2])
 
+let swatch_set = []
+for(let i = 0; i<colArray.length; i++) {
+    for (let j = 0; j < colArray[i].length; j++) {
+        let temp = new Swatch(25 + 33.33 * j, 400+33.33 * i, 33.33, 33.33, colArray[i][j],colArray[0][1],colArray[0][2],colArray[0][2])
+        swatch_set.push(temp);
+    }
+}
 
-let buttonSet = [A_0, A_1,A_2]
-let colSet = [C_1, C_2, C_3, C_4, C_5, C_6, C_7, C_8, C_9, C_10, C_11, C_12]
+let buttonSet = [A_0, A_1,A_2,A_3, A_4,A_5,A_6]
 let undoSet = [U_1,U_2]
 
 function animate(t){
@@ -36,12 +34,13 @@ function animate(t){
         buttonSet[i].update();
     }
 
-    for(let i=0; i<colSet.length; i++){
-        colSet[i].update();
-    }
 
     for(let i=0; i<undoSet.length; i++){
         undoSet[i].update();
+    }
+
+    for(let i = 0; i<swatch_set.length; i++){
+        swatch_set[i].update()
     }
 
     window.requestAnimationFrame(animate);
