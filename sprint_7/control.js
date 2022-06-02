@@ -67,6 +67,7 @@ class ControlObject extends InteractiveObject{
         super.mUp(e);
         let name = InteractiveButton.selected.text;
         let colourname = Swatch.colour;
+        let size = Size.selected.text;
         console.log(colourname)
 
         // if the shape selected is the same as name, draws specific shape
@@ -79,30 +80,37 @@ class ControlObject extends InteractiveObject{
                 // draws ellipse
                 let temp = new Ellipse(this.xMouseStart + this.w / 2, this.yMouseStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), colourname);
                 this.objectSet.push(temp);
-            }
-            else if (name=== "Star"){
+            } else if (name === "Star") {
                 // draws star
-                let temp_3 = new Star(this.xMouseStart,this.yMouseStart,this.w,this.h,colourname)
+                let temp_3 = new Star(this.xMouseStart, this.yMouseStart, this.w, this.h, colourname)
                 this.objectSet.push(temp_3);
-            }
-            else if(name==="Triangle"){
+            } else if (name === "Triangle") {
                 // draws triangle
-             let temp_4 = new Triangle(this.xMouseStart,this.yMouseStart,this.w,this.h,colourname)
+                let temp_4 = new Triangle(this.xMouseStart, this.yMouseStart, this.w, this.h, colourname)
                 this.objectSet.push(temp_4);
-            }
-            else if (name==="Heart"){
+            } else if (name === "Heart") {
                 // draws heart
-                let temp_5 = new Heart(this.xMouseStart+this.w/2,this.yMouseStart,this.w,this.h,colourname)
+                let temp_5 = new Heart(this.xMouseStart + this.w / 2, this.yMouseStart, this.w, this.h, colourname)
                 this.objectSet.push(temp_5);
-            }
-            else if (name ==="Diamond"){
+            } else if (name === "Diamond") {
                 // draws diamond
-                let temp_6 = new Diamond(this.xMouseStart,this.yMouseStart,this.w,this.h,colourname)
+                let temp_6 = new Diamond(this.xMouseStart, this.yMouseStart, this.w, this.h, colourname)
                 this.objectSet.push(temp_6);
-            }
-            else if(name === "Line"){
-                let temp_7 = new Line(this.xMouseStart,this.yMouseStart,this.xMouse,this.yMouse,colourname,1.5)
+            } /*else if (name === "Line") {
+                let temp_7 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, size)
                 this.objectSet.push(temp_7);
+            }
+            */ else if (name === "Line"){
+                if (size === "S") {
+                    let temp_7 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 2)
+                    this.objectSet.push(temp_7);
+                } else if (size === "M") {
+                    let temp_8 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 5)
+                    this.objectSet.push(temp_8);
+                } else if (size === "L") {
+                    let temp_9 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 10)
+                    this.objectSet.push(temp_9);
+                }
             }
         }
         this.mouseIsDown = false;
@@ -158,42 +166,44 @@ class ControlObject extends InteractiveObject{
         }
     }
 
-    draw(){
+    draw() {
         let name = InteractiveButton.selected.text;
+        let colourname = Swatch.colour;
+        let size = Size.selected.text;
         // if shape name is selected, draws stroke drawing guide
-        if (name === "Rectangle"){
+        if (name === "Rectangle") {
             // draws stroke rectangle
-            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
-        }
-        else if(name === "Ellipse"){
+            this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
+        } else if (name === "Ellipse") {
             // draws stroke rectangle and stroke ellipse
-            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
-            this.basicEllipse(this.xMouseStart +this.w/2, this.yMouseStart + this.h/2, Math.abs(this.w/2),Math.abs(this.h/2), colArray[0][2]);
-        }
-        else if(name=== "Star"){
+            this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
+            this.basicEllipse(this.xMouseStart + this.w / 2, this.yMouseStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), colArray[0][2]);
+        } else if (name === "Star") {
             // draws stroke rectangle and stroke star
-            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
-           this.starStroke(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
-        }
-        else if(name==="Triangle"){
+            this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
+            this.starStroke(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
+        } else if (name === "Triangle") {
             // draws stroke rectangle and stroke triangle
-            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
-            this.strokeTriangle(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2], 1.5);
-        }
-        else if (name=== "Heart"){
+            this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
+            this.strokeTriangle(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2], 1.5);
+        } else if (name === "Heart") {
             // draws stroke rectangle and stroke heart
-            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
-            this.strokeHeart(this.xMouseStart+this.w/2,this.yMouseStart,this.w,this.h,colArray[0][2],1.5);
-        }
-        else if(name === "Diamond"){
+            this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
+            this.strokeHeart(this.xMouseStart + this.w / 2, this.yMouseStart, this.w, this.h, colArray[0][2], 1.5);
+        } else if (name === "Diamond") {
             // draws stroke rectangle and stroke diamond
-            this.strokeRect(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2]);
-            this.strokeDiamond(this.xMouseStart,this.yMouseStart,this.w,this.h,colArray[0][2], 1.5);
-        }
-        else if (name === "Line"){
-            this.drawLine(this.xMouseStart,this.yMouseStart,this.xMouse,this.yMouse,colArray[0][2], 1.5)
-        }
+            this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
+            this.strokeDiamond(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2], 1.5);
+        } else if (name === "Line") {
+            if (size === "S") {
+                this.drawLine(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 2)
+            } else if (size === "M") {
+                this.drawLine(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 5)
+            } else if (size === "L") {
+                this.drawLine(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 10)
+            }
 
+        }
     }
 
 }

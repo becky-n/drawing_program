@@ -13,6 +13,10 @@ let A_6 = new InteractiveButton(275,25,150,54,colArray[0][1],colArray[0][0], col
 let U_1 = new InteractiveButton(50,550,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Undo', colArray[0][2])
 let U_2 = new InteractiveButton(250,550,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Clear', colArray[0][2])
 
+let S_1 = new Size(275,100,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'S', colArray[0][2],0.5)
+let S_2 = new Size(275,150,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'M', colArray[0][2],1)
+let S_3 = new Size(275,200,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'L', colArray[0][2],3)
+
 let swatch_set = []
 for(let i = 0; i<colArray.length; i++) {
     for (let j = 0; j < colArray[i].length; j++) {
@@ -23,6 +27,7 @@ for(let i = 0; i<colArray.length; i++) {
 
 let buttonSet = [A_0, A_1,A_2,A_3, A_4,A_5,A_6]
 let undoSet = [U_1,U_2]
+let sizeSet = [S_1,S_2,S_3]
 
 function animate(t){
     ctx.clearRect(0,0, width, height);
@@ -33,6 +38,12 @@ function animate(t){
     for(let i=0; i<buttonSet.length; i++){
         buttonSet[i].update();
     }
+
+    for(let i=0; i<sizeSet.length; i++){
+        sizeSet[i].update();
+    }
+
+
 
 
     for(let i=0; i<undoSet.length; i++){
