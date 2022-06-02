@@ -13,9 +13,9 @@ let A_6 = new InteractiveButton(275,25,150,54,colArray[0][1],colArray[0][0], col
 let U_1 = new InteractiveButton(50,550,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Undo', colArray[0][2])
 let U_2 = new InteractiveButton(250,550,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'Clear', colArray[0][2])
 
-let S_1 = new Size(275,100,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'S', colArray[0][2],0.5)
-let S_2 = new Size(275,150,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'M', colArray[0][2],1)
-let S_3 = new Size(275,200,150,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'L', colArray[0][2],3)
+let S_1 = new Size(275,100,50,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'S', colArray[0][2],0.5)
+let S_2 = new Size(325,100,50,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'M', colArray[0][2],1)
+let S_3 = new Size(375,100,50,50,colArray[0][1],colArray[0][0], colArray[0][0], colArray[0][2], 'L', colArray[0][2],3)
 
 let swatch_set = []
 for(let i = 0; i<colArray.length; i++) {
@@ -42,9 +42,6 @@ function animate(t){
     for(let i=0; i<sizeSet.length; i++){
         sizeSet[i].update();
     }
-
-
-
 
     for(let i=0; i<undoSet.length; i++){
         undoSet[i].update();

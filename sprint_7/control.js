@@ -96,11 +96,8 @@ class ControlObject extends InteractiveObject{
                 // draws diamond
                 let temp_6 = new Diamond(this.xMouseStart, this.yMouseStart, this.w, this.h, colourname)
                 this.objectSet.push(temp_6);
-            } /*else if (name === "Line") {
-                let temp_7 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, size)
-                this.objectSet.push(temp_7);
-            }
-            */ else if (name === "Line"){
+            } else if (name === "Line"){
+                // when line is selected, allows user to change width of line
                 if (size === "S") {
                     let temp_7 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 2)
                     this.objectSet.push(temp_7);
@@ -195,6 +192,7 @@ class ControlObject extends InteractiveObject{
             this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
             this.strokeDiamond(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2], 1.5);
         } else if (name === "Line") {
+            // line drawing guides for different sizes
             if (size === "S") {
                 this.drawLine(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 2)
             } else if (size === "M") {
