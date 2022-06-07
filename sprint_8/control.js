@@ -38,6 +38,8 @@ class ControlObject extends InteractiveObject{
 
         this.inBounds = false;
 
+
+
     }
 
     getRandomInt(min, max) {
@@ -112,14 +114,16 @@ class ControlObject extends InteractiveObject{
                 this.objectSet.push(temp_4)
             }
         } else if (this.mouseIsDown === true && name === "Spray" && this.inBoundsCheck(this.xMouse, this.yMouse, this.Ax, this.Ay, this.Aw, this.Ah)) {
+
             if (size === "S") {
+               // ctx.moveTo(e.clientX, e.clientY);
                 // small spray
                 let density = 100;
                 for (let i = density; i--;) {
                     let radius = 50;
                     let offsetX = this.getRandomInt(-radius, radius);
-                    let offsetY = this.getRandomInt(-radius, radius);
-                    let temp = new Rectangle(e.clientX + offsetX, e.clientY + offsetY, 1.5, 1.5, colourname);
+                     let offsetY = this.getRandomInt(-radius, radius);
+                    let temp = new Rectangle(this.xMouse+offsetX, this.yMouse+offsetY, 1.5, 1.5, colourname);
                     this.objectSet.push(temp)
                 }
             }
@@ -130,7 +134,7 @@ class ControlObject extends InteractiveObject{
                     let radius = 70;
                     let offsetX = this.getRandomInt(-radius, radius);
                     let offsetY = this.getRandomInt(-radius, radius);
-                    let temp = new Rectangle(e.clientX + offsetX, e.clientY + offsetY, 1.5, 1.5, colourname);
+                    let temp = new Rectangle(this.xMouse+offsetX, this.yMouse+offsetY, 1.5, 1.5, colourname);
                     this.objectSet.push(temp)
                 }
             }
@@ -141,7 +145,7 @@ class ControlObject extends InteractiveObject{
                     let radius = 100;
                     let offsetX = this.getRandomInt(-radius, radius);
                     let offsetY = this.getRandomInt(-radius, radius);
-                    let temp = new Rectangle(e.clientX + offsetX, e.clientY + offsetY, 1.5, 1.5, colourname);
+                    let temp = new Rectangle(this.xMouse+offsetX, this.yMouse+offsetY, 1.5, 1.5, colourname);
                     this.objectSet.push(temp)
                 }
             }
