@@ -148,7 +148,7 @@ class ControlObject extends InteractiveObject{
         }
         else if (this.mouseIsDown === true && name === "Funky Brush" && this.inBoundsCheck(this.xMouse, this.yMouse, this.Ax, this.Ay, this.Aw, this.Ah)){
 
-            let temp_11 = new funkyBrush(this.xMouse,this.yMouse,this.getRandomInt(1,13),colourname)
+            let temp_11 = new funkyBrush(this.xMouse,this.yMouse,this.getRandomInt(1,20),colourname)
             this.objectSet.push(temp_11)
         }
     }
@@ -269,8 +269,7 @@ class ControlObject extends InteractiveObject{
             this.basicEllipse(this.xMouseStart + this.w / 2, this.yMouseStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), colArray[0][2]);
         } else if (name === "Star") {
             // draws stroke rectangle and stroke star
-
-           this.strokeRect(this.xMouseStart+(2*this.w), this.yMouseStart-(2*this.h/2), this.w, this.h, colArray[0][2]);
+           this.strokeRect(this.xMouseStart-this.w, this.yMouseStart-1.2*this.h, 2*this.w,2.2*this.h, colArray[0][2]);
             this.starStroke(this.xMouseStart, this.yMouseStart, this.w, 0.5,5, colArray[0][2],1.5);
         } else if (name === "Triangle") {
             // draws stroke rectangle and stroke triangle

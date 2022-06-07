@@ -317,7 +317,6 @@ class Star{
         }
         ctx.restore();
         ctx.closePath();
-        ctx.stroke();
         ctx.fillStyle= this.fill;
         ctx.fill();
     }
@@ -510,7 +509,7 @@ class funkyBrush {
          */
         ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
         ctx.lineJoin = ctx.lineCap = 'round';
-
+        ctx.stroke();
         ctx.fillStyle = this.fill;
         ctx.fill();
     }

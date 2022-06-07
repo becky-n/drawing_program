@@ -177,7 +177,7 @@ class ControlObject extends InteractiveObject{
             this.basicEllipse(this.xMouseStart + this.w / 2, this.yMouseStart + this.h / 2, Math.abs(this.w / 2), Math.abs(this.h / 2), colArray[0][2]);
         } else if (name === "Star") {
             // draws stroke rectangle and stroke star
-           // this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
+            this.strokeRect(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
             this.starStroke(this.xMouseStart, this.yMouseStart, this.w, this.h, colArray[0][2]);
         } else if (name === "Triangle") {
             // draws stroke rectangle and stroke triangle
@@ -200,7 +200,6 @@ class ControlObject extends InteractiveObject{
             } else if (size === "L") {
                 this.drawLine(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 10)
             }
-
         }
     }
 

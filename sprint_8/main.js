@@ -33,7 +33,7 @@ let buttonSet = [A_0, A_1,A_2,A_3, A_4,A_5,A_6,A_7,A_8,A_9,A_10]
 let undoSet = [U_1,U_2]
 let sizeSet = [S_1,S_2,S_3]
 
-function animate(t){
+function animate(){
     ctx.clearRect(0,0, width, height);
     //updates for canvas
   // G.update();

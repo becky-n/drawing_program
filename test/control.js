@@ -19,10 +19,11 @@ function draw(x,y,radius, inset, n) {
         ctx.restore();
         ctx.closePath();
         ctx.stroke();
+        ctx.fillStyle = "rgb(225,200,50)"
         ctx.fill();
 }
 
-draw(120,120,100,0.5,7)
+draw(120,120,100,0.5,5)
 
 window.addEventListener('mousemove',function(e){
     draw(e.x,e.y,100,0.5,5)
