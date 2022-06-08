@@ -1,7 +1,5 @@
 //console.log("main.js is called")
 
-// calls objects
-//let G = new Grid(width,height, 25, colArray[0][2],0.3);
 let C = new ControlObject(canvas,450, 25, 475, 600);
 // defining canvas
 

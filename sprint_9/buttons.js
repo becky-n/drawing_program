@@ -65,10 +65,11 @@ class InteractiveButton extends InteractiveObject {
         ctx.fill();
         ctx.stroke();
 
-        let myFont = "bold 500 px 'Quicksand', sans-serif;";
+        let myFont = "bold 18px 'Ubuntu Condensed', sans-serif";
         ctx.textBaseline = 'middle';
         ctx.textAlign = 'center';
         ctx.font = myFont;
+
 
         ctx.fillStyle = txtCol;
         ctx.fillText(txt, x + w/2, y + h/2)

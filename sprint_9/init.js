@@ -22,56 +22,6 @@ let colArray= [
     ]
 ]
 
-/**
- * Grid
- * @param {number} w width of grid
- * @param {number} h height of grid
- * @param {number} intervalWidth interval width
- * @param {string} strokeColour colour of grid
- * @param {number} strokeWidth width of grid lines
- */
-
-class Grid{
-    constructor(w,h,intervalWidth,strokeColour,
-                strokeWidth) {
-        this.w =w;
-        this.h =h;
-        this.intervalWidth = intervalWidth;
-        this.strokeColour = strokeColour;
-        this.strokeWidth = strokeWidth;
-    }
-    update(){
-        this.draw()
-    }
-    draw(){
-        // loops to draw vertical grid lines
-        for(let i = -this.w; i <= this.w; i+=
-            this.intervalWidth){
-            this.drawLine(i, -this.h, i,
-                this.h, this.strokeColour,
-                this.strokeWidth);
-        }
-        for(let j = -this.h; j <= this.h; j +=
-            this.intervalWidth){
-            // loops to draw horizontal grid lines
-            this.drawLine(-this.w,j, this.w,
-                j, this.strokeColour,
-                this.strokeWidth);
-        }
-    }
-
-    // function for drawing the grid lines
-    drawLine(x_1,y_1,x_2,y_2,strokeColour,strokeWidth){
-        ctx.beginPath();
-        ctx.moveTo(x_1,y_1);
-        ctx.lineTo(x_2,y_2);
-        ctx.lineCap = "round";
-        ctx.strokeStyle = strokeColour;
-        ctx.lineWidth = strokeWidth;
-        ctx.stroke();
-    }
-
-}
 
 // connecting code
 canvas = document.querySelector('#myCanvas');
@@ -111,12 +61,13 @@ document.body.style.backgroundColor = "rgba(153, 153, 153,1)";
  * @param {number} yMouseStart sets position of y mouse start
  * @param {number} xMouse sets position of x mouse
  * @param {number} yMouse sets position of y mouse
- * @param {boolean} mouseIsDown sets mouse down
  */
 
 class InteractiveObject{
     constructor(){
         this.element = canvas
+        // listener is attached to canvas element
+
         // tracks movement of mouse
         this.element.addEventListener('mousedown', this.mDown.bind(this));
         // when mouse is held down
@@ -167,6 +118,7 @@ class InteractiveObject{
  * @param {number} x_1 x end point
  * @param {number} y_1 y end point
  * @param {string} fill fills shape
+ * @param {number} strokeWidth width of stroke
  */
 
 class Line{
@@ -285,7 +237,7 @@ class Star{
         ctx.beginPath();
         ctx.save();
         ctx.translate(this.x,this.y)
-        ctx.moveTo(0, 0 - this.r);
+        //ctx.moveTo(0, 0 - this.r);
         for (let i = 0; i < this.n; i++) {
             // loops through drawing lines depending on number of points
             ctx.rotate(Math.PI / this.n);

@@ -274,14 +274,14 @@ class Star{
     draw(){
         //ctx.moveTo(this.x+this.w/2,this.y+this.h/2)
         ctx.beginPath();
-        // to draw the lines 5 times for an adjustable pointed star for later
+        // to draw the lines 5 times
         for (let i=0; i<5; i++){
             ctx.lineTo(Math.cos((18+i*72)/180*Math.PI)*this.w/2+this.x+this.w/2, Math.sin((18+i*72)/180*Math.PI)*this.h/2+this.y+this.h/2)
             ctx.lineTo(Math.cos((54+i*72)/180*Math.PI)*this.w/6+this.x+this.w/2, Math.sin((54+i*72)/180*Math.PI)*this.h/6+this.y+this.h/2)
         }
         ctx.lineTo(this.x+this.w/1.015, this.y+this.h/1.54)
         ctx.fillStyle = this.fill;
-        ctx.fill()
+        ctx.fill();
     }
     update(){
         // draws 5 point star shape

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Drawing</title>
+		<title>Drawing Program</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="Description" lang="en" content="ADD SITE DESCRIPTION">
 		<meta name="author" content="ADD AUTHOR INFORMATION">
@@ -13,7 +13,10 @@
 		<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="assets/highlight/styles/tomorrow.css">
 <script src="assets/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+	import hljs from "./assets/highlight/highlight.pack";
+
+	hljs.initHighlightingOnLoad();</script>
        
 
 		<!-- Override CSS file - add your own CSS rules -->
@@ -29,7 +32,7 @@
 	<body>
 		<div class="container">
 			<div class="header">
-				<h1 class="header-heading">Drawing</h1>
+				<h1 class="header-heading">Drawing Program</h1>
 			</div>
 			<div class="nav-bar">
 				<ul class="nav">
@@ -46,13 +49,14 @@
 				<p>To create a drawing program that allows a user to make shapes and designs using different colours.</p>
 					<hr>
 <h3>Initial Project Backlog</h3>
-				<p>REMEMBER TO ADD THIS ajdnjajljsk</p>
+				<img class="img-responsive"  src="assets/img/project_backlog.jpg" alt="">
+				<br>
+				<br>
     <!-- Heading levels -->
-    <h1>Sprint One</h1>
+    <h1>Sprint 1</h1>
 				<img class="img-responsive"  src="assets/img/sprint_1_plan.png" alt="">
 <p>In Sprint 1 I wanted to create a basic, very simple drag and drop rectangle function.</p>
 <h3>Sprint 1 board in progress</h3>
-				<h3>Rough plan for Sprint 1</h3>
 				<img class="img-responsive"  src="assets/img/sprint_1_kb.png" alt="">
 				<br>
 <a href="http://localhost:63342/drawing_js/sprint_1/index.html?_ijt=em7nc1891m0pbtkvbrpm0gip38&_ij_reload=RELOAD_ON_SAVE">Canvas Link</a>
@@ -87,16 +91,16 @@
 				<h3>Github Push</h3>
 				<img class = "img-responsive" src="assets/img/sprint_1_git.png" alt ="">
 <hr>
-<h1>Sprint Two</h1>
+<h1>Sprint 2</h1>
 				<p> The purpose of this sprint was to create buttons that relate to ellipse and rectangle functions.</p>
 				<img class="img-responsive"  src="assets/img/sprint_2_kb.png" alt="">
 				<img class="img-responsive"  src="assets/img/sprint_2_plan1.png" alt="">
 				<img class="img-responsive"  src="assets/img/sprint_2_plan2.png" alt="">
 <h3>Sprint Review</h3>
 				<p>In this sprint I made an ellipse function where the user can drag and drop an ellipse that fills in with
-				a colour and I also made buttons which control the shape functions. I am happy with how the ellipse function
-				works and I also changed the design of the rectangle function so it looks cleaner (no lines or circle in
-				the middle). My buttons work sufficiently as expected but I want to change the placement and aesthetic design of them.</p>
+				a colour, and I also made buttons which control the shape functions. I am happy with how the ellipse function
+				works, and I also changed the design of the rectangle function, so it looks cleaner (no lines or circle in
+				the middle). My buttons work sufficiently as expected, but I want to change the placement and aesthetic design of them.</p>
 
 				<h4>Testing</h4>
 				<ol>
@@ -128,7 +132,7 @@
 							<source src="assets/vids/sprint_2.mp4" type="video/mp4">
 						</video>
 
-						<p>This is my final test video for sprint 2. All my buttons and shape functions worked as expected but I still
+						<p>This is my final test video for sprint 2. All my buttons and shape functions worked as expected, but I still
 						have the errors of going outside of the canvas and trying to make a shape, and the issue where moving the mouse
 						and tapping the touchpad would create a random shape. I will fix these in my next sprint as I plan on creating
 						an area where you can only draw in (buttons in a separate area) and this should resolve the boundary errors.</p>
@@ -137,7 +141,7 @@
 
 
 <hr>
-<h1>Sprint Three</h1>
+<h1>Sprint 3</h1>
 <p>In this sprint I added a smaller drawing space for the user to draw on.</p>
 				<img class="img-responsive"  src="assets/img/sprint_3_plan1.png" alt="">
 				<img class="img-responsive"  src="assets/img/sprint_3_kb.png" alt="">
@@ -163,7 +167,7 @@
 					<source src="assets/vids/sprint_3.mp4" type="video/mp4">
 				</video>
 
-<h1>Sprint Four</h1>
+<h1>Sprint 4</h1>
 				<p>In Sprint 4 I added the option to change the colour of the shape selected.</p>
 				<img class="img-responsive"  src="assets/img/s_4_plan.png" alt="">
 				<img class="img-responsive"  src="assets/img/s_4_plan2.png" alt="">
@@ -199,7 +203,7 @@
 
 				<p>The undo and clear button were quite simple to achieve. For the undo button, I just added a pop element
 				so that the last item on the objectset list (where all the shapes are being pushed into) is removed. For the
-				clear button, I just reset the list so it was empty. It was slightly troublesome to figure out where to store
+				clear button, I just reset the list, so it was empty. It was slightly troublesome to figure out where to store
 				the clear and undo function, however, as in mUp the user would have to click the button twice for it to work.
 				Overall though, I am happy with how it is functioning.</p>
 
@@ -212,7 +216,7 @@
 				<img class="img-responsive"  src="assets/img/sprint_6_kb.jpg" alt="">
 				<img class="img-responsive"  src="assets/img/sprint_6_plan_2.jpg" alt="">
 				<p>I wanted to change the design of my page to accommodate space for the buttons for the  new shapes.
-				This photo is my original design and I didn't like it, so I redesigned it. The newer design
+				This photo is my original design, and I didn't like it, so I redesigned it. The newer design
 				is a lot easier and clearer to use, and it looks more cohesive. As can be seen on the plan, I changed the alignment
 				and made buttons bigger. I also wanted to make the canvas and drawing space bigger.</p>
 
@@ -221,20 +225,21 @@
 					<source src="assets/vids/sprint_6.mp4" type="video/mp4">
 				</video>
 
-				<p>Overall, I have achieved what I wanted to in this sprint. The shapes were quite hard to figure out due to some of the
-				maths elements, but I think it overall turned out good. I think I may change the design of the star later, however, as I
+				<p>Overall, I have achieved what I wanted to in this sprint. The shapes were quite hard to figure out due to the
+				maths elements, but I think it overall turned out good. It was tricky trying to do the heart, but I found the best
+					way to do it was to make 4 individual curves that are connected to make a heart. I think I may change the design of the star later, however, as I
 				want a more flexible star code that is easier to change when adding in new points. For the final sprint design of this sprint,
 				I have left space on the right side of the shape selection buttons to accommodate space for line/brush buttons, which I
 				plan to add in my next or a later sprint.</p>
 
 <h1>Sprint 7</h1>
+				<p>In sprint 7 I added in a line and the ability to change line width.</p>
 
-				<img class="img-responsive"  src="assets/img/sprint_6_kb.jpg" alt="">
-				<img class="img-responsive"  src="assets/img/sprint_6_plan_2.jpg" alt="">
+				<img class="img-responsive"  src="assets/img/sprint_7_kb.jpg" alt="">
+				<img class="img-responsive"  src="assets/img/sprint_7_plan.jpg" alt="">
 
-				<img class="img-responsive"  src="assets/img/sprint_6_plan.jpeg" alt="">
 				<video class="center" controls>
-					<source src="assets/vids/sprint_6.mp4" type="video/mp4">
+					<source src="assets/vids/sprint_7.mp4" type="video/mp4">
 				</video>
 
 
@@ -248,110 +253,73 @@
 				selected and vice versa. Going into my next sprint, where I plan on adding brushes, I think this design is very useful.</p>
 
 <h1>Sprint 8</h1>
+				<img class="img-responsive"  src="assets/img/sprint_8_kb.jpg" alt="">
+				<p>For sprint 8, my main goal was to make a brush and along the way, I decided to redo the star shape.</p>
 
+				<p>I had no idea where to start off with when making a brush function, so I had to do some research. I found
+				this person on YouTube called "Franks Laboratory", where he was showing how the javascript stars worked mathematically
+				as well as how to make a star brush. From this video, I decided to redo my star shape as I liked his version of doing it better
+				than the one I currently had, and I also derived my brush from his star brush.</p>
+				<video class="center" controls>
+					<source src="assets/vids/test.mp4" type="video/mp4">
+				</video>
+
+				<p>I made a test file to try out his technique (as can be seen in the video). Though his code was a bit different to the code I used
+				in my drawing program, I figured that it was essentially just a star function being called under the mMove event. So,
+				I did a lot of trial and error and found out that I could just insert a circle function into mMove and a brush would form.
+				However, at first because I used a function not an object, the brush would only go on the canvas and not the drawing space.
+				I then had to make it an object but also then had to add a ctx.clip to the drawing space to cut out the brush strokes
+				that went over the boundaries. Once I had figured it out, however, I was able to experiment with more brushes. I found
+				some code for how to make a spray brush, and I adapted that to my program. I also experimented with different shape types
+				and made some quite unique brushes.</p>
+
+				<h4>Stars</h4>
+
+				<p>My first design for the star was using line to and move to repetitively to go to certain points from the mouse. This,
+				however, was not working, as can be seen in the photo. The code was also very repetitive and inflexible.</p>
+				<img class="img-responsive"  src="assets/img/star_1.jpg" alt="" width="50%">
+
+				<p>The second design was by using trig functions and loops to draw and connect lines. This did work and worked a lot better than the first attempt,
+				but, however was not very flexible in terms of if I wanted to add more star points later as there was a lot of fixed values (the design
+					is essentially a pentagon with spikes, so you have to change values for both attributes to add more points(increase number of loops doesn't do anything). The star
+					also didn't look like how I wanted it to as it was quite thing and on a weird angle, and I also wanted the star to
+					not change width as it changes size (so it always stays a perfectly shaped star).
+				</p>
+
+				<img class="img-responsive"  src="assets/img/star_2.jpg" alt="" width="50%" >
+				<img class="img-responsive"  src="assets/img/star_5.jpg" alt="" width="50%">
+
+				<p>The third design was done by having a concept of two circles, so there is an inner and outer radius. The idea is that there is a line
+				that draws from the centre to the outer radius and then to the inner radius, and then the shape rotates to draw the next point depending
+				on the number of points used (rotates it based on pi/number of points as it splits up a circle). I like this design better
+				as it makes it very easy to change the number of points a star has, as I can just change the n value when calling the function. It also
+				increases the size of the star as a whole instead of changing width and height individually.</p>
+				<img class="img-responsive"  src="assets/img/star_3.jpg" alt="" width="50%">
+				<img class="img-responsive"  src="assets/img/star_6.jpg" alt="" width="50%">
+
+				<video class="center" controls>
+					<source src="assets/vids/sprint_8.mp4" type="video/mp4">
+				</video>
+				<p>I think this will be my last sprint of adding new things to my drawing program. I am quite happy with how the program is currently,
+				and I don't think there's much I can add at this point. There was a minor error with the stroke colour for my funky brush
+				as can be seen in the video, but I will fix this in the next sprint as well as do code commenting/doctyping and cleaning up code.</p>
+<h1>Sprint 9</h1>
+				<p>Sprint 9 is code commenting and error fixing.</p>
+
+				<p>Sprint 9 final showcase of the abilities of the drawing program.</p>
+				<video class="center" controls>
+					<source src="assets/vids/sprint_9.mp4" type="video/mp4">
+				</video>
 
 <hr>
 <h1> Relevant Implications Summary</h1>
  <hr>
  <hr>
-<!-- Paragraphs -->
-<h3>Example code insert (don't do too much of this)</h3>
-<pre style="font-size: 1.5em;">
-<code class="javscript"> function inBoundsCheck(xM, yM, x, y, w, h){
-        if( xM > x && xM < x+w && yM > y && yM < y+h){
-            return true;
-        }else{
-            return false;
-        }
-    }</code>
+
+
 </pre>
  
-            <hr>     
-                
-                <h3>Video Test Example</h3>
-
-
-				<video class="center" controls>
-					<source src="assets/vids/littleTest.mp4" type="video/mp4">
-				  Your browser does not support the video tag.
-				  </video>
-					<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-					<hr>
-
-					<!-- Responsive images -->
-					<h3>Example image placements</h3>
-					<p>For images to be responsive (so that they will rescale to suit the width of the parent, use the <code>.img-responsive</code> class.</p>
-					<img class="img-responsive" src="assets/img/place_holder.png" alt="">
-                <hr>
-                <div class="col-container">
-                <div class="col">
-               <img class="img-responsive" src="assets/img/place_holder_sm.jpg" alt="">
-                <p>Ut wisi enim ad minim veniam, <a href="#">quis nostrud exerci tation ullamcorper</a> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
-                </div>
-                 <div class="col">
-                <img class="img-responsive" src="assets/img/place_holder_sm.jpg" alt="">
-                <p>Ut wisi enim ad minim veniam, <a href="#">quis nostrud exerci tation ullamcorper</a> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
-                </div>
-                </div>
-                <hr>
-               
-              
-
-					<!-- Lists -->
-					<h3>Unordered list</h3>
-					<p>Unordered lists are used to markup lists where list items do not require numbering.</p>
-					<ul>
-						<li>Ut wisi enim ad minim veniam</li>
-						<li>Quis nostrud exerci tation</li>
-						<li>Lamcorper suscipit lobortis nis</li>
-						<li>Ut aliquip ex ea commodo consequat</li>
-						<li>Duis autem vel eum iriure dolor</li>
-					</ul>
-					<hr>
-
-					<h3>Ordered list</h3>
-					<p>Ordered lists are used to markup lists where list items require numbering.</p>
-					<ol>
-						<li>Hendrerit in vulputate velit esse</li>
-						<li>Olestie consequat</li>
-						<li>Vel illum dolore eu feugiat</li>
-						<li>Nulla facilisis at vero eros</li>
-						<li>Accumsan et iusto odio</li>
-					</ol>
-					<hr>
-
-					<h3>Unstyled list</h3>
-					<p>You can make the list unstyled using the <code>list-unstyled</code> class.</p>
-					<ul class="list-unstyled">
-						<li>Ut wisi enim ad minim veniam</li>
-						<li>Quis nostrud exerci tation</li>
-						<li>Lamcorper suscipit lobortis nis</li>
-						<li>Ut aliquip ex ea commodo consequat</li>
-						<li>Duis autem vel eum iriure dolor</li>
-					</ul>
-					<hr>
-
-					<h3>Inline list</h3>
-					<p>You can make the list display inline using the <code>list-inline</code> class.</p>
-					<ul class="list-inline">
-						<li>One</li>
-						<li>Two</li>
-						<li>Three</li>
-						<li>Four</li>
-					</ul>
-					<hr>
-
-				
-
-					<h3>Buttons</h3>
-					<p>You can apply the <code>btn</code> class to any element that requires a button style.</p>
-					<p><a href="#" class="btn">Submit</a></p>
-					<hr>
-
-
-
-               
-            
+            <hr>
 
 			
 			</div>
