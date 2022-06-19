@@ -55,14 +55,6 @@ my_c.style.display = "block";
 my_c.style.margin = "auto";
 document.body.style.backgroundColor = "rgba(153, 153, 153,1)";
 
-/**
- * Interactive object
- * @param {number} xMouseStart sets position of x mouse start
- * @param {number} yMouseStart sets position of y mouse start
- * @param {number} xMouse sets position of x mouse
- * @param {number} yMouse sets position of y mouse
- */
-
 class InteractiveObject{
     constructor(){
         this.element = canvas
