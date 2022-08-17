@@ -190,7 +190,7 @@ class ControlObject extends InteractiveObject{
        // console.log(colourname)
 
         // draws specific shape if mouse is down and button is selected
-        if(this.mouseIsDown === true ) {
+        if(this.mouseIsDown === true && this.h!==0) {
             if (name === "Rectangle") {
                 // draws rectangle
                 let temp_2 = new Rectangle(this.xMouseStart, this.yMouseStart, this.w, this.h, colourname);
@@ -203,7 +203,7 @@ class ControlObject extends InteractiveObject{
                 // adds object to array
             } else if (name === "Star") {
                 // draws star
-                let temp_3 = new Star(this.xMouseStart, this.yMouseStart, this.w, 0.5,5, colourname)
+                let temp_3 = new Star(this.xMouseStart, this.yMouseStart, this.w, 0.5, 5, colourname)
                 this.objectSet.push(temp_3);
                 // adds object to array
             } else if (name === "Triangle") {
@@ -221,25 +221,30 @@ class ControlObject extends InteractiveObject{
                 let temp_6 = new Diamond(this.xMouseStart, this.yMouseStart, this.w, this.h, colourname)
                 this.objectSet.push(temp_6);
                 // adds object to array
-            } else if (name === "Line"){
-                // when line is selected, allows user to change width of line
-                if (size === "S") {
-                    // draws thin width line
-                    let temp_7 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 2)
-                    this.objectSet.push(temp_7);
-                    // adds object to array
-                } else if (size === "M") {
-                    // draws medium width line
-                    let temp_8 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 5)
-                    this.objectSet.push(temp_8);
-                    // adds object to array
-                } else if (size === "L") {
-                    // draws thick width line
-                    let temp_9 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 10)
-                    this.objectSet.push(temp_9);
-                    // adds object to array
-                }
             }
+        }
+            if (this.mouseIsDown === true){
+                if (name === "Line") {
+                    // when line is selected, allows user to change width of line
+                    if (size === "S") {
+                        // draws thin width line
+                        let temp_7 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 2)
+                        this.objectSet.push(temp_7);
+
+                        // adds object to array
+                    } else if (size === "M") {
+                        // draws medium width line
+                        let temp_8 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 5)
+                        this.objectSet.push(temp_8);
+                        // adds object to array
+                    } else if (size === "L") {
+                        // draws thick width line
+                        let temp_9 = new Line(this.xMouseStart, this.yMouseStart, this.xMouse, this.yMouse, colourname, 10)
+                        this.objectSet.push(temp_9);
+                        // adds object to array
+                    }
+                }
+
         }
         this.mouseIsDown = false;
     }
