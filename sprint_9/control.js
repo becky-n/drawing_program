@@ -190,7 +190,7 @@ class ControlObject extends InteractiveObject{
        // console.log(colourname)
 
         // draws specific shape if mouse is down and button is selected
-        if(this.mouseIsDown === true && this.w>0 && this.h>0) {
+        if(this.mouseIsDown === true ) {
             if (name === "Rectangle") {
                 // draws rectangle
                 let temp_2 = new Rectangle(this.xMouseStart, this.yMouseStart, this.w, this.h, colourname);
